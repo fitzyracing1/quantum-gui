@@ -1,86 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum GUI Simulator</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>quantum-gui</title>
+<meta name="description" content="A project by fitzyracing1.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      background:#0d1117;color:#e6edf3;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;padding:2rem}
+.card{max-width:700px;width:100%;text-align:center}
+.badge{display:inline-block;padding:.3rem 1rem;border-radius:20px;
+        font-size:.8rem;font-weight:600;background:#f1e05a18;
+        color:#f1e05a;border:1px solid #f1e05a40;margin-bottom:1.6rem}
+h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;letter-spacing:-1.5px;
+    margin-bottom:.8rem;
+    background:linear-gradient(135deg,#e6edf3 40%,#f1e05a);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bar{width:48px;height:3px;background:#f1e05a;border-radius:3px;
+      margin:.8rem auto 1.8rem;opacity:.6}
+p{font-size:1.05rem;color:#8b949e;line-height:1.75;
+   max-width:500px;margin:0 auto 2.5rem}
+.btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+a{display:inline-block;padding:.65rem 1.5rem;border-radius:8px;
+   text-decoration:none;font-weight:500;font-size:.95rem;transition:all .15s}
+.btn-p{background:#f1e05a;color:#0d1117;font-weight:600}
+.btn-p:hover{opacity:.85;transform:translateY(-2px);box-shadow:0 4px 16px #f1e05a40}
+.btn-s{background:transparent;color:#c9d1d9;border:1px solid #30363d}
+.btn-s:hover{background:#161b22;transform:translateY(-2px)}
+footer{margin-top:3rem;font-size:.78rem;color:#484f58}
+footer a{color:#58a6ff;text-decoration:none}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>⚛️ Quantum Computing Simulator</h1>
-            <p class="subtitle">Visual Circuit Builder & ENOS Calculator</p>
-        </header>
-
-        <div class="main-content">
-            <!-- ENOS Equation Calculator -->
-            <section class="enos-section">
-                <h2>ENOS Energy Calculator</h2>
-                <div class="equation-display">
-                    <p class="equation">E = mc × 1 × 2 × 3 × 4 × 1</p>
-                    <p class="equation-simplified">E = 24mc</p>
-                </div>
-                <div class="calculator">
-                    <div class="input-group">
-                        <label for="mass">Mass (m):</label>
-                        <input type="number" id="mass" value="1" step="0.1">
-                    </div>
-                    <div class="input-group">
-                        <label for="speed">Speed of Light (c):</label>
-                        <input type="number" id="speed" value="299792458" readonly>
-                        <span class="unit">m/s</span>
-                    </div>
-                    <button id="calculateBtn" class="btn-primary">Calculate Energy</button>
-                    <div id="result" class="result-display"></div>
-                </div>
-            </section>
-
-            <!-- Quantum Circuit Builder -->
-            <section class="circuit-section">
-                <h2>Quantum Circuit Builder</h2>
-                <div class="controls">
-                    <button class="gate-btn" data-gate="H">Hadamard (H)</button>
-                    <button class="gate-btn" data-gate="X">Pauli-X</button>
-                    <button class="gate-btn" data-gate="Y">Pauli-Y</button>
-                    <button class="gate-btn" data-gate="Z">Pauli-Z</button>
-                    <button class="gate-btn" data-gate="CNOT">CNOT</button>
-                    <button class="gate-btn" data-gate="M">Measure</button>
-                    <button id="clearCircuit" class="btn-danger">Clear</button>
-                    <button id="runCircuit" class="btn-success">Run Circuit</button>
-                </div>
-                <div class="circuit-display">
-                    <canvas id="circuitCanvas"></canvas>
-                </div>
-                <div class="qubit-controls">
-                    <label>Qubits:</label>
-                    <input type="number" id="qubitCount" min="1" max="5" value="2">
-                    <button id="updateQubits" class="btn-secondary">Update</button>
-                </div>
-            </section>
-
-            <!-- Quantum State Visualizer -->
-            <section class="state-section">
-                <h2>Quantum State</h2>
-                <div id="stateDisplay" class="state-display">
-                    <div class="state-vector">
-                        <p>Initial State: |00⟩</p>
-                    </div>
-                </div>
-                <div class="probability-bars" id="probabilityBars"></div>
-            </section>
-
-            <!-- Measurement Results -->
-            <section class="results-section">
-                <h2>Measurement Results</h2>
-                <canvas id="histogramCanvas"></canvas>
-                <div id="measurements" class="measurements-display"></div>
-            </section>
-        </div>
-    </div>
-
-    <script src="quantum.js"></script>
-    <script src="circuit.js"></script>
-    <script src="app.js"></script>
+<div class="card">
+  <span class="badge">JavaScript</span>
+  <h1>quantum-gui</h1>
+  <div class="bar"></div>
+  <p>A project by fitzyracing1.</p>
+  <div class="btns">
+    <a class="btn-p" href="https://github.com/fitzyracing1/quantum-gui">View on GitHub</a>
+    <a class="btn-s" href="https://github.com/fitzyracing1">All Projects →</a>
+  </div>
+  <footer>
+    Built with <a href="https://pages.github.com">GitHub Pages</a> ·
+    <a href="https://github.com/fitzyracing1/quantum-gui">github.com/fitzyracing1/quantum-gui</a>
+  </footer>
+</div>
 </body>
 </html>
